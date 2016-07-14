@@ -21,8 +21,26 @@ import de.greenrobot.event.EventBus;
 /**
  * Créé par liusiqian 16/7/14.
  */
-public abstract class BaseApiExecutor extends HttpExecutor implements Callback
+public class BaseApiExecutor extends HttpExecutor implements Callback
 {
+    private static BaseApiExecutor instance = null;
+    private BaseApiExecutor(){}
+    protected static BaseApiExecutor getInstance()
+    {
+        if(instance == null)
+        {
+            synchronized (BaseApiExecutor.class)
+            {
+                if (instance == null)
+                {
+                    instance = new BaseApiExecutor();
+                }
+            }
+        }
+        return instance;
+    }
+
+
     private EventBus bus = EventBus.getDefault();
     private Set<Api> runningTask = new CopyOnWriteArraySet<>();
     private Set<HttpTask> pendingTasks = new CopyOnWriteArraySet<>();
