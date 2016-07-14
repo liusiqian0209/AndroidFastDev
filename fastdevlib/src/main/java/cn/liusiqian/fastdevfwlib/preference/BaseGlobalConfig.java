@@ -41,7 +41,8 @@ public class BaseGlobalConfig extends BaseConfig
     // Param name
     private static final String ACCESS_TOKEN = "access_token";
     private static final String CUR_USERID = "cur_userid";
-    private static final String VERSION = "version";
+    private static final String VERSION_CODE = "version_code";
+    private static final String VERSION_NAME = "version_name";
     private static final String LOGIN_NAME = "cur_userLoginName";
     private static final String LOGIN_PASSWORD = "cur_userLoginPassword";
 
@@ -49,12 +50,22 @@ public class BaseGlobalConfig extends BaseConfig
 
     public int getVersionCode()
     {
-        return getInt(VERSION, 0);
+        return getInt(VERSION_CODE, 0);
     }
 
     public void setVersionCode(int code)
     {
-        commitInt(VERSION, code);
+        commitInt(VERSION_CODE, code);
+    }
+
+    public String getVersionName()
+    {
+        return getString(VERSION_NAME, "");
+    }
+
+    public void setVersionName(String name)
+    {
+        commitString(VERSION_NAME, name);
     }
 
     public String getLoginName()

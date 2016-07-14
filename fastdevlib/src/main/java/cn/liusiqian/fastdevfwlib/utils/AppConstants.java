@@ -21,7 +21,7 @@ public class AppConstants
 
     //全局控制
     public static final int DATABASE_VERSION = 1;          //数据库版本
-    public static boolean DEBUG_MODE = false;              //测试模式
+    public static boolean DEBUG_MODE = true;              //测试模式
 
     // 屏幕宽高
     public static int screenWidth;

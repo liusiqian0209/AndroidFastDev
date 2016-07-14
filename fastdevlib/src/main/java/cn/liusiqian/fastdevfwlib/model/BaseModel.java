@@ -7,21 +7,22 @@ package cn.liusiqian.fastdevfwlib.model;
 import com.google.gson.annotations.SerializedName;
 
 /**
- * 我们这里需要让服务器对于每个Api返回统一的格式。
+ * 我们这里存放服务器对于每个Api统一返回的格式。
+ * 无论参数有无以及为何值，返回的json中总存在这些字段
  * 比如error_code表示返回码(0表示成功),
- * error_msg表示错误信息
- * data表示返回的数据结构
+ * reason表示错误信息
+ *
+ * Here we stored json fields that part of the server response,
+ * no matter what your params are or whether they exists
  */
 public abstract class BaseModel
 {
+    // TODO:Customize your own response json here
 
-    /**
-     * error_code : 0
-     * error_msg : success
-     */
-
+    @SerializedName("resultcode")
+    public String resultcode;
+    @SerializedName("reason")
+    public String reason;
     @SerializedName("error_code")
     public int errorCode;
-    @SerializedName("error_msg")
-    public String errorMsg;
 }
