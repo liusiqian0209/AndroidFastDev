@@ -19,6 +19,8 @@ public abstract class BaseModel
 {
     // TODO:Customize your own response json here
 
+    public static final int ERROR_CODE_SUCCESS = 0;
+
     @SerializedName("resultcode")
     public String resultcode;
     @SerializedName("reason")
