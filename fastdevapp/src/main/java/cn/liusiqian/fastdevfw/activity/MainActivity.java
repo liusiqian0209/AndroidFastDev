@@ -1,11 +1,11 @@
 package cn.liusiqian.fastdevfw.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 
 import cn.liusiqian.fastdevfw.R;
+import cn.liusiqian.fastdevfw.activity.base.BaseActivity;
 
-public class MainActivity extends Activity
+public class MainActivity extends BaseActivity
 {
 
     @Override

@@ -28,4 +28,6 @@ dependencies {
     compile 'com.squareup.okhttp:okhttp:2.7.5'
     compile 'com.orhanobut:logger:1.15'
     compile 'com.squareup.okio:okio:1.9.0'
+    compile 'com.j256.ormlite:ormlite-android:4.48'
+    compile 'com.j256.ormlite:ormlite-core:4.48'
 }
