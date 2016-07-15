@@ -1,9 +1,9 @@
-package cn.liusiqian.fastdevfwlib.utils;
+package cn.liusiqian.fastdevfw.utils;
 
 import android.content.Context;
 import android.view.WindowManager;
 
-import cn.liusiqian.fastdevfwlib.FastDevApp;
+import cn.liusiqian.fastdevfw.FastDevApp;
 
 /**
  * Créé par liusiqian 16/7/12.

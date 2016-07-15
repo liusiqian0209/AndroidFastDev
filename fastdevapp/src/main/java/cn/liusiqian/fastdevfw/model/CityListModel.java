@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-import cn.liusiqian.fastdevfwlib.model.BaseModel;
+import cn.liusiqian.fastdevfw.model.base.BaseModel;
 
 /**
  * Créé par liusiqian 16/7/14.

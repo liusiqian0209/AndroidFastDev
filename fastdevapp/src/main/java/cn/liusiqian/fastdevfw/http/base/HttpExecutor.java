@@ -1,4 +1,4 @@
-package cn.liusiqian.fastdevfwlib.http;
+package cn.liusiqian.fastdevfw.http.base;
 
 import android.os.Handler;
 import android.os.Looper;
@@ -29,8 +29,8 @@ import java.net.URLEncoder;
 import java.security.InvalidParameterException;
 import java.util.Map;
 
-import cn.liusiqian.fastdevfwlib.http.callback.ProgressCallback;
-import cn.liusiqian.fastdevfwlib.model.BaseModel;
+import cn.liusiqian.fastdevfw.http.callback.ProgressCallback;
+import cn.liusiqian.fastdevfw.model.base.BaseModel;
 import okio.BufferedSink;
 
 /**
@@ -45,7 +45,7 @@ public class HttpExecutor
     protected Gson mGson = new Gson();
     protected Handler mHandler;
 
-    public HttpExecutor()
+    protected HttpExecutor()
     {
         mClient = new OkHttpClient();
         mHandler = new Handler(Looper.getMainLooper());

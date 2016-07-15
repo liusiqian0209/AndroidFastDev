@@ -1,4 +1,4 @@
-package cn.liusiqian.fastdevfwlib.http.callback;
+package cn.liusiqian.fastdevfw.http.callback;
 
 /**
  * Créé par liusiqian 16/7/13.

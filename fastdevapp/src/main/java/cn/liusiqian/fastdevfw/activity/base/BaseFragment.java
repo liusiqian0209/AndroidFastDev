@@ -1,4 +1,4 @@
-package cn.liusiqian.fastdevfwlib.activity;
+package cn.liusiqian.fastdevfw.activity.base;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

@@ -1,6 +1,6 @@
 package cn.liusiqian.fastdevfw.http;
 
-import cn.liusiqian.fastdevfwlib.utils.AppConstants;
+import cn.liusiqian.fastdevfw.utils.AppConstants;
 
 /**
  * Créé par liusiqian 16/7/14.

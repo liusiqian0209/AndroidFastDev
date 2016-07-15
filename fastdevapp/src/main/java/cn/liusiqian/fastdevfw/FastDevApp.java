@@ -1,4 +1,4 @@
-package cn.liusiqian.fastdevfwlib;
+package cn.liusiqian.fastdevfw;
 
 import android.app.Application;
 

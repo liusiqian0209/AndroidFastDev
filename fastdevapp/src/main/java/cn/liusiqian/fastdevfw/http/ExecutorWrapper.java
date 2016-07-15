@@ -1,4 +1,4 @@
-package cn.liusiqian.fastdevfw.http.base;
+package cn.liusiqian.fastdevfw.http;
 
 import android.text.TextUtils;
 
@@ -11,39 +11,23 @@ import java.io.IOException;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
 
-import cn.liusiqian.fastdevfw.http.Api;
 import cn.liusiqian.fastdevfw.event.ApiEvent;
+import cn.liusiqian.fastdevfw.http.base.HttpExecutor;
+import cn.liusiqian.fastdevfw.http.base.HttpTask;
 import cn.liusiqian.fastdevfw.model.AccessTokenModel;
-import cn.liusiqian.fastdevfwlib.http.HttpExecutor;
-import cn.liusiqian.fastdevfwlib.preference.BaseGlobalConfig;
+import cn.liusiqian.fastdevfw.preference.GlobalConfig;
 import de.greenrobot.event.EventBus;
 
 /**
  * Créé par liusiqian 16/7/14.
  */
-public class BaseApiExecutor extends HttpExecutor implements Callback
+public class ExecutorWrapper extends HttpExecutor implements Callback
 {
-    private static BaseApiExecutor instance = null;
-    private BaseApiExecutor(){}
-    protected static BaseApiExecutor getInstance()
-    {
-        if(instance == null)
-        {
-            synchronized (BaseApiExecutor.class)
-            {
-                if (instance == null)
-                {
-                    instance = new BaseApiExecutor();
-                }
-            }
-        }
-        return instance;
-    }
-
-
     private EventBus bus = EventBus.getDefault();
     private Set<Api> runningTask = new CopyOnWriteArraySet<>();
     private Set<HttpTask> pendingTasks = new CopyOnWriteArraySet<>();
+
+    protected ExecutorWrapper(){}
 
     @Override
     public void onFailure(Request request, IOException e)
@@ -82,7 +66,7 @@ public class BaseApiExecutor extends HttpExecutor implements Callback
                 AccessTokenModel token = (AccessTokenModel) mGson.fromJson(response.body().string(), task.api.modelClass);
                 if (token != null && token.result != null && !TextUtils.isEmpty(token.result.accessToken))
                 {
-                    BaseGlobalConfig.getInstance().setAccessToken(token.result.accessToken);
+                    GlobalConfig.getInstance().setAccessToken(token.result.accessToken);
                 }
                 for (HttpTask pTask : pendingTasks)
                 {
@@ -121,7 +105,7 @@ public class BaseApiExecutor extends HttpExecutor implements Callback
     {
         if (!runningTask.contains(task.api))
         {
-            String token = BaseGlobalConfig.getInstance().getAccessToken();
+            String token = GlobalConfig.getInstance().getAccessToken();
             if (Api.ACCESS_TOKEN != task.api && TextUtils.isEmpty(token))
             {
                 // 这里是依赖请求；假定如果当前不存在access_token，先请求access_token
@@ -135,8 +119,8 @@ public class BaseApiExecutor extends HttpExecutor implements Callback
                 runningTask.add(task.api);
                 //TODO: 在这里添加每个Api请求中都要携带的参数
                 //TODO: add params that each http request will take
-                task.addParam("version", BaseGlobalConfig.getInstance().getVersionName());
-                task.addParam("access_token", BaseGlobalConfig.getInstance().getAccessToken());
+                task.addParam("version", GlobalConfig.getInstance().getVersionName());
+                task.addParam("access_token", GlobalConfig.getInstance().getAccessToken());
                 doRequestAsync(task.url, task.params, task.api.method, task, this);
             }
         }

@@ -1,4 +1,4 @@
-package cn.liusiqian.fastdevfwlib.preference;
+package cn.liusiqian.fastdevfw.preference;
 
 import android.content.Context;
 import android.content.SharedPreferences;

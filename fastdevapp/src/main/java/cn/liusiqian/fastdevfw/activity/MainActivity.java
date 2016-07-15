@@ -1,7 +1,9 @@
-package cn.liusiqian.fastdevfw;
+package cn.liusiqian.fastdevfw.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
+
+import cn.liusiqian.fastdevfw.R;
 
 public class MainActivity extends Activity
 {

@@ -1,4 +1,4 @@
-package cn.liusiqian.fastdevfwlib.activity;
+package cn.liusiqian.fastdevfw.activity.base;
 
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;

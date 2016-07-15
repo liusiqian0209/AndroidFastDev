@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.3"
 
     defaultConfig {
-        applicationId "cn.liusiqian.fastdevframe"
+        applicationId "cn.liusiqian.fastdevfw"
         minSdkVersion 14
         targetSdkVersion 23
         versionCode 1
@@ -23,5 +23,9 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.4.0'
-    compile project(':fastdevlib')
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'de.greenrobot:eventbus:3.0.0-beta1'
+    compile 'com.squareup.okhttp:okhttp:2.7.5'
+    compile 'com.orhanobut:logger:1.15'
+    compile 'com.squareup.okio:okio:1.9.0'
 }

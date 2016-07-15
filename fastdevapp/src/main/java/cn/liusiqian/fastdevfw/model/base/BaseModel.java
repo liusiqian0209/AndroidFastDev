@@ -1,4 +1,4 @@
-package cn.liusiqian.fastdevfwlib.model;
+package cn.liusiqian.fastdevfw.model.base;
 
 /**
  * Créé par liusiqian 16/7/13.

@@ -1,4 +1,4 @@
-package cn.liusiqian.fastdevfwlib.http;
+package cn.liusiqian.fastdevfw.http.base;
 
 import java.io.File;
 

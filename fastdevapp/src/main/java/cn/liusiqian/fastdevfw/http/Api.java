@@ -1,10 +1,10 @@
 package cn.liusiqian.fastdevfw.http;
 
+import cn.liusiqian.fastdevfw.http.base.HttpMethod;
 import cn.liusiqian.fastdevfw.model.AccessTokenModel;
 import cn.liusiqian.fastdevfw.model.CityAirModel;
 import cn.liusiqian.fastdevfw.model.CityListModel;
-import cn.liusiqian.fastdevfwlib.http.HttpMethod;
-import cn.liusiqian.fastdevfwlib.model.BaseModel;
+import cn.liusiqian.fastdevfw.model.base.BaseModel;
 
 /**
  * Créé par liusiqian 16/7/13.
@@ -17,7 +17,7 @@ public enum Api
     // TODO: define your own api here
 
     CITY_AIR("air/cityair", CityAirModel.class),
-    GET_CITIES("air/airCities",HttpMethod.GET, CityListModel.class),
+    GET_CITIES("air/airCities", HttpMethod.GET, CityListModel.class),
     //access_token is like a cookie that represent your current id on your device
     // api below is a fake one
     ACCESS_TOKEN("access/token",AccessTokenModel.class);

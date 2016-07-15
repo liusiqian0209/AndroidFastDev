@@ -11,6 +11,8 @@ import cn.liusiqian.fastdevfw.http.DomainManager;
  */
 public class HttpTask
 {
+    public static final String TAG_GLOBAL = "global";
+
     public Api api;
     public String url;
     public String tag;
@@ -20,6 +22,7 @@ public class HttpTask
     {
         this.api = api;
         url = DomainManager.getUrl(api);
+        tag = TAG_GLOBAL;   //default tag
     }
 
     public HttpTask addParam(String key, String value)
