@@ -1,6 +1,7 @@
 package cn.liusiqian.fastdevfw.preference;
 
 
+import cn.liusiqian.fastdevfw.ExampleTag;
 import cn.liusiqian.fastdevfw.FastDevApp;
 
 /**
@@ -38,6 +39,7 @@ public class UserConfig extends BaseConfig
     }
 
     // Param name
+    @ExampleTag
     private static final String SOUND_ON = "sound_on";
     private static final String VIBRATE_ON = "vibrate_on";
 

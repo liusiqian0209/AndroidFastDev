@@ -4,6 +4,7 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 
+import cn.liusiqian.fastdevfw.FastDevApp;
 import cn.liusiqian.fastdevfw.event.ApiEvent;
 import cn.liusiqian.fastdevfw.model.base.BaseModel;
 import de.greenrobot.event.Subscribe;
@@ -46,5 +47,19 @@ public class HttpService extends Service
     {
         //TODO Api请求失败
         //TODO api request error
+    }
+
+    public static void startApiService()
+    {
+        Intent intent = new Intent();
+        intent.setClass(FastDevApp.getInstance(),HttpService.class);
+        FastDevApp.getInstance().startService(intent);
+    }
+
+    public static void stopApiService()
+    {
+        Intent intent = new Intent();
+        intent.setClass(FastDevApp.getInstance(),HttpService.class);
+        FastDevApp.getInstance().stopService(intent);
     }
 }

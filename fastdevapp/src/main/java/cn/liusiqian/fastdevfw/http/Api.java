@@ -1,5 +1,6 @@
 package cn.liusiqian.fastdevfw.http;
 
+import cn.liusiqian.fastdevfw.ExampleTag;
 import cn.liusiqian.fastdevfw.http.base.HttpMethod;
 import cn.liusiqian.fastdevfw.model.AccessTokenModel;
 import cn.liusiqian.fastdevfw.model.CityAirModel;
@@ -16,17 +17,20 @@ public enum Api
     // Api Examples shown below
     // TODO: define your own api here
 
+    @ExampleTag
     CITY_AIR("air/cityair", CityAirModel.class),
+    @ExampleTag
     GET_CITIES("air/airCities", HttpMethod.GET, CityListModel.class),
     //access_token is like a cookie that represent your current id on your device
     // api below is a fake one
+    @ExampleTag
     ACCESS_TOKEN("access/token",AccessTokenModel.class);
 
     //Constructor with no parameter usually used for downloading file
     Api()
     {
         this.apiName = "";
-        this.modelClass = String.class;
+        this.modelClass = BaseModel.class;
         this.method = HttpMethod.GET;
     }
 
@@ -37,14 +41,14 @@ public enum Api
         this.method = HttpMethod.GET;
     }
 
-    Api(String apiName, Class modelClass)
+    Api(String apiName, Class<? extends BaseModel> modelClass)
     {
         this.apiName = apiName;
         this.modelClass = modelClass;
         this.method = HttpMethod.GET;
     }
 
-    Api(String apiName, HttpMethod method, Class modelClass)
+    Api(String apiName, HttpMethod method, Class<? extends BaseModel> modelClass)
     {
         this.apiName = apiName;
         this.method = method;

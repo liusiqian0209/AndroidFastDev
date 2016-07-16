@@ -1,5 +1,6 @@
 package cn.liusiqian.fastdevfw.http;
 
+import cn.liusiqian.fastdevfw.ExampleTag;
 import cn.liusiqian.fastdevfw.utils.AppConstants;
 
 /**
@@ -10,6 +11,7 @@ public class DomainManager
     //这个类用于拼凑完整的域名,根据不同的服务器以及不同的环境获得对应的前缀
     //This class is used for getting your whole url, you may return corresponding domain prefix
     // according to your individual server and your Debug switch
+    @ExampleTag
     public static final String ONLINE = "http://web.juhe.cn/environment/";
     public static final String TEST = "https://192.168.12.23/environment/";
     public static final String BACKUP_SERVER = "https://192.168.12.28/environment/";

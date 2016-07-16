@@ -12,7 +12,9 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
+import cn.liusiqian.fastdevfw.ExampleTag;
 import cn.liusiqian.fastdevfw.FastDevApp;
+import cn.liusiqian.fastdevfw.database.bean.UserBean;
 import cn.liusiqian.fastdevfw.preference.GlobalConfig;
 import cn.liusiqian.fastdevfw.utils.AppConstants;
 
@@ -23,7 +25,9 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper
 {
 
     //TODO: Define your tables here
-    private Class[] tableCls = new Class[]{};
+    @ExampleTag
+    private Class[] tableCls = new Class[]{UserBean.class};
+
     //TODO: Define your database file prefix here
     private static final String DB_FILE_PREFIX = "AndroidFastDev_";
 

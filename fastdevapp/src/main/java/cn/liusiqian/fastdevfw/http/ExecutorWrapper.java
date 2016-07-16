@@ -101,7 +101,7 @@ public class ExecutorWrapper extends HttpExecutor implements Callback
     }
 
 
-    private void executeTask(HttpTask task)
+    protected void executeTask(HttpTask task)
     {
         if (!runningTask.contains(task.api))
         {

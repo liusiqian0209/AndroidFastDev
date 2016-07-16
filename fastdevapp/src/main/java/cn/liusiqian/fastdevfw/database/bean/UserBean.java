@@ -3,12 +3,13 @@ package cn.liusiqian.fastdevfw.database.bean;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
+import cn.liusiqian.fastdevfw.ExampleTag;
+
 /**
  * Créé par liusiqian 16/7/15.
- * <p/>
- * this class is just an example
  */
 
+@ExampleTag
 @DatabaseTable(tableName = "person_info")
 public class UserBean extends BaseBean
 {

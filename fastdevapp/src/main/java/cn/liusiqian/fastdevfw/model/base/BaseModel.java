@@ -6,6 +6,8 @@ package cn.liusiqian.fastdevfw.model.base;
 
 import com.google.gson.annotations.SerializedName;
 
+import cn.liusiqian.fastdevfw.ExampleTag;
+
 /**
  * 我们这里存放服务器对于每个Api统一返回的格式。
  * 无论参数有无以及为何值，返回的json中总存在这些字段
@@ -21,10 +23,13 @@ public abstract class BaseModel
 
     public static final int ERROR_CODE_SUCCESS = 0;
 
+    @ExampleTag
     @SerializedName("resultcode")
     public String resultcode;
+    @ExampleTag
     @SerializedName("reason")
     public String reason;
+    @ExampleTag
     @SerializedName("error_code")
     public int errorCode;
 }

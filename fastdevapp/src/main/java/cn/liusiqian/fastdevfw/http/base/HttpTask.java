@@ -25,6 +25,13 @@ public class HttpTask
         tag = TAG_GLOBAL;   //default tag
     }
 
+    public HttpTask(Api api, String tag)
+    {
+        this.api = api;
+        url = DomainManager.getUrl(api);
+        this.tag = tag;
+    }
+
     public HttpTask addParam(String key, String value)
     {
         if (key != null && value != null)

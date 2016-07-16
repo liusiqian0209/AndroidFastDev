@@ -4,11 +4,13 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
+import cn.liusiqian.fastdevfw.ExampleTag;
 import cn.liusiqian.fastdevfw.model.base.BaseModel;
 
 /**
  * Créé par liusiqian 16/7/14.
  */
+@ExampleTag
 public class CityListModel extends BaseModel
 {
     @SerializedName("result")

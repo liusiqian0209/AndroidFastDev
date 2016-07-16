@@ -1,5 +1,8 @@
 package cn.liusiqian.fastdevfw.http;
 
+import cn.liusiqian.fastdevfw.ExampleTag;
+import cn.liusiqian.fastdevfw.http.base.HttpTask;
+
 /**
  * Créé par liusiqian 16/7/15.
  */
@@ -20,5 +23,20 @@ public class Requests extends ExecutorWrapper
             }
         }
         return instance;
+    }
+
+    @ExampleTag
+    public void getCityAir(String cityName)
+    {
+        HttpTask task = new HttpTask(Api.CITY_AIR);
+        task.addParam("city",cityName);
+        executeTask(task);
+    }
+
+    @ExampleTag
+    public void getCities()
+    {
+        HttpTask task = new HttpTask(Api.GET_CITIES,"page_main");
+        executeTask(task);
     }
 }

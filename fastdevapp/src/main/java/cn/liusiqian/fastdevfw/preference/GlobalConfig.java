@@ -2,6 +2,7 @@ package cn.liusiqian.fastdevfw.preference;
 
 import android.text.TextUtils;
 
+import cn.liusiqian.fastdevfw.ExampleTag;
 import cn.liusiqian.fastdevfw.FastDevApp;
 
 
@@ -40,6 +41,7 @@ public class GlobalConfig extends BaseConfig
     //SharedPreference File name
     private static final String PREFERENCES_NAME = "global_pref";
     // Param name
+    @ExampleTag
     private static final String ACCESS_TOKEN = "access_token";
     private static final String CUR_USERID = "cur_userid";
     private static final String VERSION_CODE = "version_code";

@@ -2,13 +2,14 @@ package cn.liusiqian.fastdevfw.database.dao;
 
 import java.util.List;
 
+import cn.liusiqian.fastdevfw.ExampleTag;
 import cn.liusiqian.fastdevfw.database.bean.UserBean;
 
 /**
  * Créé par liusiqian 16/7/15.
- * <p/>
- * this class is just an example
  */
+
+@ExampleTag
 public class UserDAO extends BaseDAO<UserBean>
 {
     public boolean addSingleUser(String userid, String name, int age)
