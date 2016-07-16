@@ -1,7 +1,7 @@
 # AndroidFastDev
 
 一个Android网络应用的基础框架，便于快速开发<p>
-A Foundamental Android Application Framework for Fast Development
+A Fundamental Android Application Framework for Fast Development
 <p><p>
 ##特性
 ### 基于网络请求最简化的原则，实现一行代码请求接口，任意位置可以接收对象形式的结果。
