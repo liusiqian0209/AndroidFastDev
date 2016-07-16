@@ -15,6 +15,7 @@ public class DomainManager
     public static final String ONLINE = "http://web.juhe.cn/environment/";
     public static final String TEST = "https://192.168.12.23/environment/";
     public static final String BACKUP_SERVER = "https://192.168.12.28/environment/";
+    public static final String UPLOAD_SERVER = "https://192.168.12.23/files/";
 
 
     public static String getUrl(Api api)
@@ -28,6 +29,9 @@ public class DomainManager
                 break;
             case ACCESS_TOKEN:
                 prefix = AppConstants.DEBUG_MODE ? TEST : BACKUP_SERVER;
+                break;
+            case UPLOAD_FILE:
+                prefix = AppConstants.DEBUG_MODE ? TEST : UPLOAD_SERVER;
                 break;
         }
         return prefix + api.apiName;

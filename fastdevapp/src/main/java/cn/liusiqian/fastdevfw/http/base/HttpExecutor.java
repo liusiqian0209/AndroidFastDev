@@ -27,6 +27,7 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.net.URLEncoder;
 import java.security.InvalidParameterException;
+import java.util.HashMap;
 import java.util.Map;
 
 import cn.liusiqian.fastdevfw.http.callback.ProgressCallback;
@@ -36,9 +37,8 @@ import okio.BufferedSink;
 /**
  * Créé par liusiqian 16/7/14.
  */
-public class HttpExecutor
+public abstract class HttpExecutor
 {
-    private static final String TAG = HttpExecutor.class.getSimpleName();
     private static final String CHARSET_NAME = "utf-8";
     protected OkHttpClient mClient;
     private static final int BUFFER_SIZE = 4 * 1024;
@@ -259,7 +259,12 @@ public class HttpExecutor
                         in.close();
                     }
                 });
-        if (params != null && params.size() > 0)
+        if(params == null)
+        {
+            params = new HashMap<>();
+        }
+        addDefaultParams(params);
+        if (params.size() > 0)
         {
             for (Map.Entry<String, String> entry : params.entrySet())
             {
@@ -435,5 +440,7 @@ public class HttpExecutor
             throw new InvalidParameterException(e.getMessage());
         }
     }
+
+    protected abstract void addDefaultParams(Map<String, String> params);
 
 }

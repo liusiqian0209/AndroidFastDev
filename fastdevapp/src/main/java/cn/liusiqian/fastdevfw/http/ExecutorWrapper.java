@@ -8,6 +8,7 @@ import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
 
 import java.io.IOException;
+import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
 
@@ -117,13 +118,19 @@ public class ExecutorWrapper extends HttpExecutor implements Callback
             else
             {
                 runningTask.add(task.api);
-                //TODO: 在这里添加每个Api请求中都要携带的参数
-                //TODO: add params that each http request will take
-                task.addParam("version", GlobalConfig.getInstance().getVersionName());
-                task.addParam("access_token", GlobalConfig.getInstance().getAccessToken());
+                addDefaultParams(task.params);
                 doRequestAsync(task.url, task.params, task.api.method, task, this);
             }
         }
+    }
+
+    @Override
+    protected void addDefaultParams(Map<String, String> params)
+    {
+        //TODO: 在这里添加每个Api请求中都要携带的参数
+        //TODO: add params that each http request will take
+        params.put("version", GlobalConfig.getInstance().getVersionName());
+        params.put("access_token", GlobalConfig.getInstance().getAccessToken());
     }
 
     private void getAccessToken()

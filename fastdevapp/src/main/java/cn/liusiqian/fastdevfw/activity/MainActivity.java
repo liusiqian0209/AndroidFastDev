@@ -23,6 +23,7 @@ public class MainActivity extends BaseActivity
     {
         Requests.getInstance().getCities();
         Requests.getInstance().getCityAir("Beijing");
+//        Requests.getInstance().uploadFile();
     }
 
     @ExampleTag

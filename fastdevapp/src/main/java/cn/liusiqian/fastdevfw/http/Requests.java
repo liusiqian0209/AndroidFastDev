@@ -1,7 +1,14 @@
 package cn.liusiqian.fastdevfw.http;
 
+import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
+
 import cn.liusiqian.fastdevfw.ExampleTag;
+import cn.liusiqian.fastdevfw.http.base.FileUploadEntity;
 import cn.liusiqian.fastdevfw.http.base.HttpTask;
+import cn.liusiqian.fastdevfw.http.callback.ProgressCallback;
+import cn.liusiqian.fastdevfw.model.UploadModel;
 
 /**
  * Créé par liusiqian 16/7/15.
@@ -38,5 +45,11 @@ public class Requests extends ExecutorWrapper
     {
         HttpTask task = new HttpTask(Api.GET_CITIES,"page_main");
         executeTask(task);
+    }
+
+    @ExampleTag
+    public void uploadFile(File file, ProgressCallback<UploadModel> callback)
+    {
+        uploadWithForm(DomainManager.getUrl(Api.UPLOAD_FILE), null, new FileUploadEntity("attach", "attach", null, file), callback);
     }
 }

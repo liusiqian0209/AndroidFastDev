@@ -5,6 +5,7 @@ import cn.liusiqian.fastdevfw.http.base.HttpMethod;
 import cn.liusiqian.fastdevfw.model.AccessTokenModel;
 import cn.liusiqian.fastdevfw.model.CityAirModel;
 import cn.liusiqian.fastdevfw.model.CityListModel;
+import cn.liusiqian.fastdevfw.model.UploadModel;
 import cn.liusiqian.fastdevfw.model.base.BaseModel;
 
 /**
@@ -24,7 +25,9 @@ public enum Api
     //access_token is like a cookie that represent your current id on your device
     // api below is a fake one
     @ExampleTag
-    ACCESS_TOKEN("access/token",AccessTokenModel.class);
+    ACCESS_TOKEN("access/token",AccessTokenModel.class),
+    @ExampleTag
+    UPLOAD_FILE("file/upload",HttpMethod.POST, UploadModel.class);
 
     //Constructor with no parameter usually used for downloading file
     Api()
